@@ -1,0 +1,72 @@
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .about__image {
+    order: -1;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-lg: 3rem;
+  }
+
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--color-surface);
+    z-index: 1001;
+    padding: 6rem 2rem;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+  }
+
+  .nav--open {
+    display: block;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-toggle {
+    display: block;
+    z-index: 1002;
+    margin-right: 0.5rem;
+  }
+
+  .nav-toggle--open span { background: transparent; }
+  .nav-toggle--open span::before { transform: rotate(45deg); top: 0; }
+  .nav-toggle--open span::after { transform: rotate(-45deg); top: 0; }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+    padding: var(--space-md);
+  }
+
+  .contact__cta {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+    padding-left: 0;
+    padding-top: var(--space-md);
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}

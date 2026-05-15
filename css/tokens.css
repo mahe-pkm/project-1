@@ -1,0 +1,47 @@
+:root {
+  /* Common Tokens */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --container-width: 1200px;
+
+  /* Premium Gold stays consistent */
+  --color-primary: #d4af37;
+  --color-primary-rgb: 212, 175, 55;
+  --color-secondary: #c5a028;
+}
+
+/* Dark Theme (Default) */
+[data-theme="dark"], :root:not([data-theme="light"]) {
+  --color-bg: #0a0a0a;
+  --color-surface: #121212;
+  --color-surface-hover: #1a1a1a;
+  --color-text: #f5f5f5;
+  --color-muted: #a0a0a0;
+  --color-border: rgba(212, 175, 55, 0.15);
+  --color-glass: rgba(18, 18, 18, 0.85);
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.12);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --color-bg: #f8fbff;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f1f5f9;
+  --color-text: #172033;
+  --color-muted: #64748b;
+  --color-border: rgba(212, 175, 55, 0.25);
+  --color-glass: rgba(255, 255, 255, 0.85);
+  --shadow-soft: 0 10px 40px rgba(16, 69, 124, 0.08);
+  --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.08);
+}

@@ -1,0 +1,16 @@
+.env
+*.log
+.DS_Store
+node_modules/
+dist/
+.cache/
+deploy/backups/
+deploy/tmp/
+deploy/*.log
+deploy/deploy-log.jsonl
+deploy/.deploy.lock
+
+# Agent Skill Files
+AGENTS.md
+SKILL.md
+prompts/

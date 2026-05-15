@@ -1,0 +1,129 @@
+/* Page Specific Styles */
+
+/* Hero */
+.hero__title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  color: var(--color-muted);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Services */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card__icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.service-card__title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.service-card__text {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* About */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.about__text {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.about__image .image-frame {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(212, 175, 55, 0.2);
+  letter-spacing: 0.2em;
+}
+
+/* Contact */
+.contact-card {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+}
+
+.contact__list {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.contact__value {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.contact__cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-lg);
+}
