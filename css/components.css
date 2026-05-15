@@ -56,11 +56,36 @@
 
 /* Logo */
 .logo {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: var(--transition-fast);
+}
+
+.logo a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .logo img {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
 /* Nav */

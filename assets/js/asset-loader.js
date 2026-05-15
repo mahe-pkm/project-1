@@ -2,27 +2,16 @@
 Generic Asset Loader
 
 Purpose:
-- Keeps asset filenames easy to change through assets/asset-map.json.
+- Keeps asset filenames easy to change through assets/asset-map.js.
 - Supports images and background images.
+- Works locally (file://) without CORS issues.
 
 Usage:
-  <img data-asset="brand.logo.primary" alt="Brand logo">
-  <section data-bg-asset="hero.home"></section>
+  <img data-asset="brand.logo" alt="Brand logo">
+  <section data-bg-asset="hero.main"></section>
 */
 
 (function () {
-  const manifestPath = "assets/asset-map.json";
-
-  async function loadAssetMap() {
-    const response = await fetch(manifestPath, { cache: "no-store" });
-
-    if (!response.ok) {
-      throw new Error("Failed to load asset map: " + manifestPath);
-    }
-
-    return response.json();
-  }
-
   function applyAsset(element, src) {
     const tag = element.tagName.toLowerCase();
 
@@ -44,7 +33,14 @@ Usage:
     element.setAttribute("data-resolved-bg-asset", src);
   }
 
-  function resolveAssets(assetMap) {
+  function resolveAssets() {
+    const assetMap = window.ASSET_MAP;
+
+    if (!assetMap) {
+      console.error("Asset map not found. Make sure assets/asset-map.js is loaded.");
+      return;
+    }
+
     document.querySelectorAll("[data-asset]").forEach((element) => {
       const key = element.getAttribute("data-asset");
       const src = assetMap[key];
@@ -72,12 +68,10 @@ Usage:
     });
   }
 
-  document.addEventListener("DOMContentLoaded", async () => {
-    try {
-      const assetMap = await loadAssetMap();
-      resolveAssets(assetMap);
-    } catch (error) {
-      console.error(error);
-    }
-  });
+  // Run on load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", resolveAssets);
+  } else {
+    resolveAssets();
+  }
 })();
