@@ -166,10 +166,10 @@
 /* Floating Buttons */
 .whatsapp-btn {
   position: fixed;
-  bottom: 7rem; /* Placed above the scroll-top button */
+  bottom: 6.5rem; /* Placed above the scroll-top button */
   right: 2rem;
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   background: #25d366;
   color: white;
   border-radius: 50%;
